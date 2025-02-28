@@ -25,11 +25,19 @@ public class PrestamoService {
         return prestamoRepository.obtenerActivos();
     }
 
+    public Optional<Prestamo> obtenerPorId(String id) {
+        return prestamoRepository.obtenerPorId(id);
+    }
+
     public void crearPrestamo(Prestamo prestamo) {
         prestamoRepository.agregar(prestamo);
     }
 
-    public boolean actualizarPrestamo(Prestamo prestamo) {
+    public boolean actualizarEstado(String id, EstadoPrestamo nuevoEstado) {
+        return prestamoRepository.actualizarEstado(id, nuevoEstado);
+    }
+
+    public boolean actualizarPrestamo(String id, EstadoPrestamo nuevoEstado) {
         return prestamoRepository.actualizarEstado(id, nuevoEstado);
     }
 

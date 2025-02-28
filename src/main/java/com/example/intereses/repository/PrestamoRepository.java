@@ -16,7 +16,7 @@ public class PrestamoRepository {
         return prestamos;
     }
 
-    public Optional<Prestamo> obtenerPrestamo(String id) {
+    public Optional<Prestamo> obtenerPorId(String id) {
         return prestamos.stream().filter(p -> p.id().equals(id)).findFirst();
     }
 
